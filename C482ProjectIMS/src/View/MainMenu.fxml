@@ -30,22 +30,22 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <TextField alignment="CENTER_RIGHT" promptText="Search Parts By ID/Name" />
+                        <TextField fx:id="searchPartsText" alignment="CENTER_RIGHT" onKeyTyped="#onInputMethodSearchParts" promptText="Search Parts By ID/Name" />
                      </children>
                   </HBox>
-                  <TableView prefHeight="200.0" prefWidth="390.0">
+                  <TableView fx:id="MainMenuPartsTableView" prefHeight="200.0" prefWidth="390.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Part ID" />
-                      <TableColumn prefWidth="75.0" text="Part Name" />
-                        <TableColumn prefWidth="120.0" text="Inventory Level" />
-                        <TableColumn prefWidth="120.0" text="Price" />
+                      <TableColumn fx:id="colPartID" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="colPartName" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="colPartInventoryLevel" prefWidth="120.0" text="Inventory Level" />
+                        <TableColumn fx:id="colPartPrice" prefWidth="120.0" text="Price" />
                     </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Add" />
-                        <Button mnemonicParsing="false" text="Modify" />
-                        <Button mnemonicParsing="false" text="Delete" />
+                        <Button fx:id="addPartButton" mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
+                        <Button fx:id="modifyPartButton" mnemonicParsing="false" onAction="#onActionModifyPart" text="Modify" />
+                        <Button fx:id="deletePartButton" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete" />
                      </children>
                   </HBox>
                </children>
@@ -65,22 +65,22 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <TextField alignment="CENTER_RIGHT" promptText="Search Products By ID/Name" />
+                        <TextField fx:id="searchProductsTxt" alignment="CENTER_RIGHT" onKeyTyped="#onInputMethodSearchProducts" promptText="Search Products By ID/Name" />
                      </children>
                   </HBox>
-                  <TableView prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="MainMenuProductsTableView" prefHeight="200.0" prefWidth="200.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="Product ID" />
-                        <TableColumn prefWidth="75.0" text="Product Name" />
-                        <TableColumn prefWidth="120.0" text="Inventory Level" />
-                        <TableColumn prefWidth="120.0" text="Price" />
+                        <TableColumn fx:id="colProductID" prefWidth="75.0" text="Product ID" />
+                        <TableColumn fx:id="colProductName" prefWidth="75.0" text="Product Name" />
+                        <TableColumn fx:id="colProductInventoryLevel" prefWidth="120.0" text="Inventory Level" />
+                        <TableColumn fx:id="colProductPrice" prefWidth="120.0" text="Price" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Add" />
-                        <Button mnemonicParsing="false" text="Modify" />
-                        <Button mnemonicParsing="false" text="Delete" />
+                        <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#onActionAddProduct" text="Add" />
+                        <Button fx:id="modifyProductButton" mnemonicParsing="false" onAction="#onActionModifyProduct" text="Modify" />
+                        <Button fx:id="deleteProductButton" mnemonicParsing="false" onAction="#onActionDeleteProduct" text="Delete" />
                      </children>
                   </HBox>
                </children>
@@ -90,7 +90,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Button layoutX="789.0" layoutY="286.0" mnemonicParsing="false" text="Exit" />
+            <Button fx:id="exitButton" layoutX="789.0" layoutY="286.0" mnemonicParsing="false" onAction="#onActionExit" text="Exit" />
          </children>
       </AnchorPane>
    </children>

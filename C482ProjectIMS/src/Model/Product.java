@@ -22,11 +22,8 @@ public class Product {
         this.max = max;
     }
 
-    public static ObservableList<Part> getAssociatedParts() {
-        return associatedParts;
-    }
 
-    public static void setAssociatedParts(ObservableList<Part> associatedParts) {
+    public static void setAssociatedParts(ObservableList <Part> associatedParts) {
         Product.associatedParts = associatedParts;
     }
 
@@ -76,5 +73,23 @@ public class Product {
 
     public void setMax(int max) {
         this.max = max;
+    }
+
+    public void addAssociatedPart(Part part) {
+        associatedParts.add(part);
+    }
+
+    public boolean deleteAssociatedPart(int partID) {
+        for (Part part : associatedParts) {
+            if(part.getId() == partID) {
+                associatedParts.remove(part);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ObservableList<Part> getAllAssociatedParts() {
+        return associatedParts;
     }
 }
